@@ -21,7 +21,7 @@ Welcome to myProjects, a collection reflecting my web development journey from b
 
 - *New Project Are Coming*
 
-![Alt text](MyProjects/MyProjects/ss.png)
+![Alt text](MyProjects/ss.png)
 
 
 
