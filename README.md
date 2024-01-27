@@ -7,11 +7,23 @@ Welcome to myProjects, a collection reflecting my web development journey from b
 
 ## Project List:
 
-1. **Project One:**
-2. **Project Two:**
-3. **Project Three:**
+Certainly! Here is the list of project names in markdown bullet points:
 
+- **Card Shuffle Game**
+- **Color Changer**
+- **Dice Roll**
+- **Hypotenuse Calculator**
+- **KeyPressed**
+- **Number Guessing Game**
+- **QR Code Generator**
+- **Rock Paper Scissor**
+- **Simple Counter**
+- **Stopwatch**
+- **Temp Convertor**
+- **To Do List**
 ...
+...
+- **New Project Are Coming**
 
 ## How to Use:
 
