@@ -5,40 +5,27 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dice Roller</title>
+  <title>Document</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
-    }
-
     #roll-dice {
       padding: 40px;
       color: white;
       background-color: black;
       max-width: 200px;
+      max-height: 500px;
       border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease-in-out;
     }
 
     #btn {
       padding: 15px 25px;
       font-size: 24px;
+      text-align: center;
       color: white;
       background-color: lightcoral;
       border: none;
       border-radius: 15px;
       box-shadow: 0 10px #999;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
     #btn:hover {
@@ -49,43 +36,29 @@
       box-shadow: 0 5px #666;
       transform: translateY(10px);
     }
-
-    #roll-result img {
-      max-width: 100%;
-      height: auto;
-      transition: transform 0.3s ease-in-out;
-    }
   </style>
 </head>
 
 <body>
-  <div id="roll-dice">
-    <h1>A Dice Roller</h1>
-    <hr />
-    <div id="roll-result"><img src="Dices/0.jpg" alt="Dice" /></div>
-    <hr />
-    <h2 id="p1">Begin the Game</h2>
-    <button type="button" id="btn" onclick="rollDice()">Roll dice</button>
-  </div>
+  <center>
+    <div id="roll-dice">
+      <h1>A Dice Roller</h1>
+      <hr />
+      <span id="roll-result"><img src="Dices/0.jpg" /></span>
+      <hr />
+      <h2 id="p1">Begin the Game</h2>
+      <button type="button" id="btn" onclick="rolldice()">Roll dice</button>
+    </div>
+    <script>
+      function rolldice() {
+        var result = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("roll-result").innerHTML =
+          '<img src="dices/' + result + '.jpg" />';
+        document.getElementById("p1").innerHTML = "You Got : " + result;
+      }
 
-  <script>
-    // Preload dice images
-    var diceImages = [];
-    for (var i = 1; i <= 6; i++) {
-      var img = new Image();
-      img.src = 'dices/' + i + '.jpg';
-      diceImages.push(img);
-    }
-
-    function rollDice() {
-      var result = Math.floor(Math.random() * 6) + 1;
-      var rollResultElement = document.getElementById("roll-result");
-      var p1Element = document.getElementById("p1");
-
-      rollResultElement.innerHTML = '<img src="dices/' + result + '.jpg" alt="Dice" />';
-      p1Element.innerHTML = "You Got: " + result;
-    }
-  </script>
+    </script>
+  </center>
 </body>
 
 </html>
