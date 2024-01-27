@@ -5,10 +5,7 @@ Explore myProjects: a showcase of my web dev journey from beginner to intermedia
 
 Welcome to myProjects, a collection reflecting my web development journey from beginner to intermediate levels. Explore various mini projects crafted with HTML, CSS, and JavaScript, showcasing the evolution of my skills.
 
-## Project List:
-
-Certainly! Here is the list of project names in markdown bullet points:
-
+## My Project List:
 - **Card Shuffle Game**
 - **Color Changer**
 - **Dice Roll**
@@ -21,9 +18,8 @@ Certainly! Here is the list of project names in markdown bullet points:
 - **Stopwatch**
 - **Temp Convertor**
 - **To Do List**
-...
-...
-- **New Project Are Coming**
+
+- *New Project Are Coming*
 
 ## How to Use:
 
