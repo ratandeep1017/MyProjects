@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="textBox">Enter a temperature:</label>
+      <input type="text" id="textBox" value ="32"/><br /><br />
+
+      Convert To :
+      <label for="cButton">Celsius</label>
+      <input type="radio" id="cButton" name="unit" checked />
+
+      <label for="fButton">Fahrenheit</label>
+      <input type="radio" id="fButton" name="unit" />
+      <br /><br />
+      <button type="button" id="submitButton" onclick="convert()">
+        CONVERT</button
+      ><br /><br />
+      <label id="tempLabel"></label>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

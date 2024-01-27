@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    .box,
+    .qrcode {
+      text-align: center;
+      display: inline-block;
+      align-items: center;
+      border: 3px solid red;
+      padding: 20px;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <div class="box">
+      <h1>QR Code Generator</h1>
+      <div class="qrcode"></div>
+      <br />
+      <p>Enter URL :</p>
+      <input type="text" placeholder="Enter URL & Press Enter" onchange="generateQr()" /><br /><br />
+      <p>Enter Image Name :</p>
+      <input type="text" name="QRname" id="QRname" placeholder="Image Name"/><br /><br /><br />
+      <button id="btn-save">Download QR Code</button>
+    </div>
+  </center>
+  <script>
+
+
+
+
+    var qrcode = new QRCode(document.querySelector(".qrcode"));
+    qrcode.makeCode("QR Code Generator");
+    function generateQr() {
+      var inputText = document.querySelector("input").value;
+      qrcode.makeCode(inputText);
+    }
+
+
+
+
+    //for downloading the qr image
+    var btnSave = document.getElementById("btn-save");
+    btnSave.addEventListener("click", () => {
+      var qrname = document.getElementById("QRname").value;
+      var qrCodeImage = document.querySelector(".qrcode img");
+      var link = document.createElement("a");
+      link.href = qrCodeImage.src;
+      link.download = `${qrname}.png`;
+      link.click();
+    });
+  </script>
+</body>
+
+</html>

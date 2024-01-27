@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eee3e3;
+            margin: 0;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header,
+        footer {
+            background-color: #333333;
+            color: #eee3e3;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        #project-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-item {
+            margin: 33px;
+            padding: 20px;
+            background-color: crimson;
+            border-radius: 10px;
+            box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: consolas;
+
+        }
+
+        .project-item:hover {
+            transform: scale(1.3);
+        }
+
+        h1,
+        h3 {
+            font-family: consolas, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Various Mini Projects By Me</h1>
+    </header>
+
+    <ul id="project-list">
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\CardShuffleGame-main\index.html">Card Shuffle Game</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\ColorChanger-main\index.html">Color Changer</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\DiceRoll-main\index.html">Dice Roll</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\HypotenuseCalculator-main\index.html">Hypotenuse Calc</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\KeyPressed-main\index.html">KeyPressed</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\NumberGuessingGame-main\index.html">Number Guess</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\qr_code_generator-main\index.html">QR Code</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\RockPaperScissor-main\index.html">Rock Paper Scissor</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\SimpleCounter-main\index.html">Simple Counter</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\stopwatch-main\index.html">Stopwatch</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\TempratureConvertor-main\index.html">Temp Convertor</a>
+        </li>
+        <li class="project-item">
+            <a class="project-link" href="MyProjects\ToDoList\index.html">To Do List</a>
+        </li>
+        <!-- Add more project items as needed-->
+        <li class="project-item">
+            <a class="project-link" href="/ProjectAddress">New Project</a>
+        </li>
+
+    </ul>
+
+
+    <!-- <button class="project-item" style="color:white"  onclick="addProject()">Add Project</button> -->
+
+
+    <!-- <script>
+    function addProject() {
+        // Prompt the user for project address and name
+        var projectAddress = prompt("Enter the project address:");
+        var projectName = prompt("Enter the project name:");
+
+        // Create a new list item for the project
+        var newProjectItem = document.createElement("li");
+        newProjectItem.className = "project-item";
+
+        // Create a link for the project
+        var newProjectLink = document.createElement("a");
+        newProjectLink.className = "project-link";
+        newProjectLink.href = projectAddress;
+        newProjectLink.textContent = projectName;
+
+        // Append the link to the list item
+        newProjectItem.appendChild(newProjectLink);
+
+        // Append the list item to the project list
+        document.getElementById("project-list").appendChild(newProjectItem);
+    }
+</script> -->
+    <footer>
+        <h3>Thank you for visiting!</h3>
+    </footer>
+
+
+</body>
+
+</html>

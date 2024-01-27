@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js"></script>
+    <style>
+      .container {
+        color: lightseagreen;
+        background-color: black;
+        padding: 10px;
+        height: 100%;
+        width: 280px;
+        font-family: consolas;
+      }
+      #c1,
+      h2 {
+        color: whitesmoke;
+      }
+      #btn,
+      #a,
+      #b {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <script>
+      let a, b, c;
+      a = window.prompt("Enter side a : ");
+      b = window.prompt("Enter side b : ");
+      a = Number(a);
+      b = Number(b);
+
+      c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+      console.log("Side c  = " + c);
+     </script> -->
+    <div class="container" align="center">
+      <h2>Hypotenuse Calculator 📐</h2>
+      <label id="a1">Enter Side A : </label>
+      <input type="text" id="a" /><br /><br />
+      <label id="b1">Enter Side B : </label>
+      <input type="text" id="b" /><br /><br />
+      <button type="button" id="btn">Find</button><br /><br />
+      <label id="c1">Side C = </label>
+    </div>
+    <script>
+      document.getElementById("btn").onclick = function () {
+        let a, b, c;
+        a = document.getElementById("a").value;
+        b = document.getElementById("b").value;
+        a = Number(a);
+        b = Number(b);
+
+        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        document.getElementById("c1").innerHTML = "Side C = " + c;
+      };
+    </script>
+  </body>
+</html>

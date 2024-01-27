@@ -1,0 +1,37 @@
+body{
+  background-color: black;
+  color: white;
+  font-family: consolas;
+  align-items: center;
+  text-align: center;
+}#btn {
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  background-color: lightsalmon;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+
+#MainDiv {
+  border: 6px ridge rgb(250, 0, 0) ;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display : inline-block;
+  background: linear-gradient(90deg, black, darkblue, black);
+}
+p{
+  font: 30px consolas;
+}
+
+#stopwatch { position: relative;
+  font-size: 35px;
+  color : white;
+  font-family: consolas, monospace;
+  padding-top: 80px;
+}

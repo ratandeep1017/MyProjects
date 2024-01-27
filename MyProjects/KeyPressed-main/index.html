@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Print Keys Pressed</title>
+    <style>
+      body {
+        background-color: black;
+        color: lightgreen;
+        font: 30px consolas;
+        text-align: center;
+      }
+      #output {
+        height: 100%;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <p>PRESS ANY KEY :</p>
+    <div id="output"></div>
+    <script>
+      document.addEventListener("keydown", function (event) {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML += "Key Pressed : [ " + event.key + " ]<br>";
+        outputDiv.scrollTop = outputDiv.scrollHeight; // Scroll to the bottom
+      });
+    </script>
+  </body>
+</html>

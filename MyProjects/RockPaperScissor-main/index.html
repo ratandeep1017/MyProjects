@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><center>
+    <div id="MainDiv" >
+        <div id="buttondiv">
+            <button onclick="play('rock')" id="rock"></button>
+            <button onclick="play('paper')" id="paper"></button>
+            <button onclick="play('scissor')" id="scissor"></button>
+        </div>
+        <h2 id="checkWin"></h2>
+        <h2 id="computerval"></h2>
+        <div  id="scores">
+           <h2>SCORES</h2>
+            <span id="user1">0</span> : USER SCORE <br>
+            <span id="comp1">0</span> : COMPUTER SCORE<br>
+            <span id="tie1">0</span> : TIE MATCHES <br>
+            <span id="total1">0</span> : TOTAL GAMES PLAYED <br>
+        </div>
+        <h2 id="whoswinning"></h2>
+    
+        <button id="reset" onclick="refresh()"></button>
+    </div>
+    <script src="index.js"></script>
+    </center>
+</body>
+
+</html>
