@@ -18,6 +18,8 @@ Welcome to myProjects, a collection reflecting my web development journey from b
 - **Stopwatch**
 - **Temp Convertor**
 - **To Do List**
+- **Calculator**
+  
 
 - *New Project Are Coming*
 
