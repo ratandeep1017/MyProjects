@@ -4,29 +4,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
+
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: consolas
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(155, 15, 15, 1) 51%, rgba(0, 212, 255, 1) 100%);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .todo-app {
+            width: 100%;
+            max-width: 540px;
+            background-color: #fff;
+            padding: 40px 30px 70px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            gap: 2rem;
+
+        }
+
+        .app-title {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .app-title h2,
+        .app-title i {
+            color: black;
+            font-family: consolas;
+            text-align: center;
+            align-items: center;
+        }
+
+        .app-title i {
+            font-size: 26px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #edeef0;
+            border-radius: 30px;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 12px;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 15px 50px;
+            border-radius: 30px;
+
+            background-color: crimson;
+            color: #fff;
+            font-size: 18px;
+            transition: all .25s ease;
+            font-family: consolas;
+        }
+
+        button:hover {
+            filter: brightness(.8);
+            border-radius: 0px;
+        }
+
+        @media screen and (max-width: 400px) {
+            button {
+                padding: 15px;
+                border-radius: 15px;
+            }
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            font-size: 17px;
+            padding: 12px 8px 12px 50px;
+            margin-top: 5px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+        }
+
+        ul li::before {
+            position: absolute;
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            left: 0;
+            border: 2px solid crimson;
+            margin-left:20px;
+        }
+
+        ul li:hover {
+            background-color: #F0F0F0;
+            border-radius: 10px;
+        }
+
+        ul .checked {
+            color: #d4afaf;
+            /* text-decoration: line-through; */
+        }
+
+        ul .checked::before {
+            background-color: crimson;
+        }
+
+        span {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: crimson;
+            font-size: 18px;
+            transition: all .2s ease;
+                        margin-right:20px;
+
+        }
+
+        span:hover {
+            background-color: crimson;
+            color: white;
+        }
+
+        .blue::before {
+            color: crimson;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 </head>
 
 <body>
-
-    <body>
-        <div class="container">
-            <div class="todo-app">
-                <div class="app-title">
-                    <h2>To-Do List</h2>
-                    <i class="fa-solid fa-book-bookmark"></i>
-                </div>
-                <div class="row">
-                    <input type="text" id="input-box" placeholder="Add Tasks Here . . . . . ">
-                    <button>Add</button>
-                </div>
-                <ul id="list-container">
-                </ul>
+    <div class="container">
+        <div class="todo-app">
+            <div class="app-title">
+                <h2>To-Do List</h2>
+                <i class="blue bi bi-check2-square"></i>
             </div>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add Tasks Here . . . . . ">
+                <button>Add</button>
+            </div>
+            <ul id="list-container"></ul>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script>
+        // Select the input element with the id "input-box"
+        const inputBox = document.getElementById("input-box");
+
+        // Select the button element using a CSS selector
+        const button = document.querySelector("button");
+
+        // Select the list container element with the id "list-container"
+        const list = document.getElementById("list-container");
+
+        // Add an event listener to the button that triggers the addTask function when clicked
+        button.addEventListener("click", addTask);
+
+        // Define the addTask function
+        function addTask() {
+            // Check if the input field is empty
+            if (inputBox.value === '') {
+                // If input field is empty, show an alert message
+                alert("you must write something!");
+            } else {
+                // If input field is not empty, create a new list item element
+                let li = document.createElement("li");
+
+                // Set the text content of the new list item to the capitalized input value
+                li.textContent = capitalizeFirstLetter(inputBox.value);
+
+                // Append the new list item to the list container
+                list.appendChild(li);
+
+                // Clear the input field after adding the task
+                inputBox.value = '';
+
+                // Create a delete button (span element) for the new list item
+                let span = document.createElement("span");
+                span.innerHTML = "x"; // Set the inner HTML content of the span to "x"
+                li.appendChild(span); // Append the span to the list item
+            }
+
+            // Save the updated list data
+            saveData();
+        }
+
+        // Define a function to capitalize the first letter of a string
+        function capitalizeFirstLetter(str) {
+            return str.replace(/\b\w/g, (match) => match.toUpperCase());
+        }
+
+        // Add an event listener to the list container to handle task completion and deletion
+        list.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI") {
+                // If clicked element is a list item, toggle its "checked" class
+                e.target.classList.toggle("checked");
+                // Save the updated list data
+                saveData();
+            } else if (e.target.tagName === "SPAN") {
+                // If clicked element is a delete button, remove its parent list item
+                e.target.parentElement.remove();
+                // Save the updated list data
+                saveData();
+            }
+        });
+
+        // Define a function to save the current list data to local storage
+        function saveData() {
+            localStorage.setItem("data", list.innerHTML);
+        }
+
+        // Define a function to retrieve and display the saved list data from local storage
+        function showTask() {
+            const savedData = localStorage.getItem("data");
+            if (savedData) {
+                list.innerHTML = savedData;
+            }
+        }
+
+        // Add an event listener to trigger the showTask function when the window is fully loaded
+        window.addEventListener("load", showTask);
+
+    </script>
 </body>
 
 </html>
